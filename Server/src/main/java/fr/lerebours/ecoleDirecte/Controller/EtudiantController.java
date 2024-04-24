@@ -29,8 +29,8 @@ public class EtudiantController {
     ClasseService classeService;
 
     @GetMapping("/all")
-    public Iterable<Etudiant> getAllEtudiants() {
-        return etudiantService.getAllEtudiants();
+    public Iterable<EtudiantFullDTO> getAllEtudiants() {
+        return classeService.getAllEtudiantsFromClasses();
     }
 
     @GetMapping("")

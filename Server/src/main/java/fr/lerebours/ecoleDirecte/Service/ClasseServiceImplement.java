@@ -1,5 +1,6 @@
 package fr.lerebours.ecoleDirecte.Service;
 
+import fr.lerebours.ecoleDirecte.Model.DTO.EtudiantFullDTO;
 import fr.lerebours.ecoleDirecte.Model.Etudiant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,5 +37,9 @@ public class ClasseServiceImplement implements ClasseService {
         Classe classe = this.classeRepository.findById(classe_id).get();
         classe.addEtudiant(etudiant_id);
         this.classeRepository.save(classe);
+    }
+
+    public Iterable<EtudiantFullDTO> getAllEtudiantsFromClasses() {
+        return this.classeRepository.findAllEtudiants();
     }
 }

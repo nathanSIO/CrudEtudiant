@@ -1,5 +1,6 @@
 package fr.lerebours.ecoleDirecte.Service;
 
+import fr.lerebours.ecoleDirecte.Model.DTO.EtudiantFullDTO;
 import fr.lerebours.ecoleDirecte.Model.Etudiant;
 import org.springframework.stereotype.Service;
 
@@ -18,4 +19,6 @@ public interface ClasseService {
     void deleteClasseByID(Integer classe_id);
 
     void addEtudiantToClasse(Integer classe_id, Etudiant etudiant_id);
+
+    Iterable<EtudiantFullDTO> getAllEtudiantsFromClasses();
 }
