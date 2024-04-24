@@ -6,6 +6,7 @@ import fr.lerebours.ecoleDirecte.Model.Matiere;
 
 @Service
 public interface MatiereService {
+    
     Iterable<Matiere> getAllMatieres();
     
     Matiere getMatiereByID(Integer matiere_id);

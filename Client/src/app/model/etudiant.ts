@@ -4,7 +4,9 @@ export interface Etudiant {
   nom?: string;
   prenom?: string;
   photo?: string;
-  // classeId?: number;
-  // nomClasse?: string;
-  classeId?: Classe;
+  classeId?: number;
+  nomClasse?: string;
+
+
+  // classeId?: Classe;
 }

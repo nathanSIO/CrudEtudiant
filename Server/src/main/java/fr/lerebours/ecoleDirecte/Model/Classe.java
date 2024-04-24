@@ -1,9 +1,7 @@
 package fr.lerebours.ecoleDirecte.Model;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -26,10 +24,14 @@ public class Classe {
 
     private String denomination;
 
-    @OneToMany(mappedBy = "classeId", fetch = FetchType.EAGER)
-    private Etudiant[] etudiants;
-    
-    // @OneToMany( fetch = FetchType.EAGER)
-    // @JoinColumn(name = "id_classe")
+    // @OneToMany(mappedBy = "classeId", fetch = FetchType.EAGER)
     // private Etudiant[] etudiants;
+    
+    @OneToMany( fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_classe")
+    private List<Etudiant> etudiants;
+
+    @OneToMany( fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_devoir")
+    private List<Devoir> devoirs;
 }

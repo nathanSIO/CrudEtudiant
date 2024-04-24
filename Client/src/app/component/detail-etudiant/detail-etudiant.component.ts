@@ -145,7 +145,7 @@ export class DetailEtudiantComponent implements OnInit {
     });
   }
 
-  onClasseIdChange(newId: number | null): void {
+onClasseIdChange(newId: number | null): void {
     console.log("je rentre")
     if (!this.etudiant.classeId) {
       console.log("je rentre null")

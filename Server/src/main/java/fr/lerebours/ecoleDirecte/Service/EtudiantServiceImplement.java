@@ -31,7 +31,7 @@ public class EtudiantServiceImplement implements EtudiantService {
         this.etudiantRepository.deleteById(Etudiant_id);
     }
 
-    public Iterable<Etudiant> getAllEtudiantsAvailable() {
-        return this.etudiantRepository.findAllByClasseIdIsNull();
-    }
+    // public Iterable<Etudiant> getAllEtudiantsAvailable() {
+    //     return this.etudiantRepository.findAllByClasseIdIsNull();
+    // }
 }
