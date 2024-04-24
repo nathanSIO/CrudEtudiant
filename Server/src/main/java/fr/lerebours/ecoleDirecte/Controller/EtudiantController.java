@@ -1,5 +1,7 @@
 package fr.lerebours.ecoleDirecte.Controller;
 
+import fr.lerebours.ecoleDirecte.Model.DTO.EtudiantFullDTO;
+import fr.lerebours.ecoleDirecte.Service.ClasseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,9 @@ public class EtudiantController {
     @Autowired
     EtudiantService etudiantService;
 
+    @Autowired
+    ClasseService classeService;
+
     @GetMapping("/all")
     public Iterable<Etudiant> getAllEtudiants() {
         return etudiantService.getAllEtudiants();
@@ -34,9 +39,10 @@ public class EtudiantController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<?> addEtudiant(@RequestBody Etudiant Etudiant) {
-        etudiantService.addEtudiant(Etudiant);
-
+    public ResponseEntity<?> addEtudiant(@RequestBody EtudiantFullDTO Etudiant) {
+        Etudiant current = new Etudiant(Etudiant);
+        etudiantService.addEtudiant(current);
+        classeService.addEtudiantToClasse(Etudiant.getId_classe(), current);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 

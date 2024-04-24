@@ -34,4 +34,8 @@ public class Classe {
     @OneToMany( fetch = FetchType.EAGER)
     @JoinColumn(name = "id_devoir")
     private List<Devoir> devoirs;
+
+    public void addEtudiant(Etudiant etudiant) {
+        this.etudiants.add(etudiant);
+    }
 }

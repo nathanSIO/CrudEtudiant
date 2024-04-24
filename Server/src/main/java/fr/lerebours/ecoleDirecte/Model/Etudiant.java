@@ -1,5 +1,6 @@
 package fr.lerebours.ecoleDirecte.Model;
 
+import fr.lerebours.ecoleDirecte.Model.DTO.EtudiantFullDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,6 +14,16 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Etudiant {
+
+    public Etudiant() {
+    }
+
+    public Etudiant(EtudiantFullDTO etudiantFullDTO) {
+        this.id = etudiantFullDTO.getId();
+        this.nom = etudiantFullDTO.getNom();
+        this.prenom = etudiantFullDTO.getPrenom();
+        this.photo_URL = etudiantFullDTO.getPhoto_URL();
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

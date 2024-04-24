@@ -1,5 +1,6 @@
 package fr.lerebours.ecoleDirecte.Service;
 
+import fr.lerebours.ecoleDirecte.Model.Etudiant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +30,11 @@ public class ClasseServiceImplement implements ClasseService {
 
     public void deleteClasseByID(Integer classe_id) {
         this.classeRepository.deleteById(classe_id);
+    }
+
+    public void addEtudiantToClasse(Integer classe_id, Etudiant etudiant_id) {
+        Classe classe = this.classeRepository.findById(classe_id).get();
+        classe.addEtudiant(etudiant_id);
+        this.classeRepository.save(classe);
     }
 }
