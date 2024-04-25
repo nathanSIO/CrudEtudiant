@@ -2,6 +2,9 @@ package fr.lerebours.ecoleDirecte.Model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -24,6 +27,8 @@ public class Matiere {
 
     private String denomination;
 
+
+    @JsonIgnore
     @OneToMany( fetch = FetchType.EAGER)
     @JoinColumn(name = "id_matiere")
     private List<Devoir> devoirs;

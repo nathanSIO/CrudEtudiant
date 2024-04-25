@@ -10,7 +10,7 @@ public interface DevoirService {
     
     Devoir getDevoirByID(Integer devoir_id);
 
-    void addDevoir(Devoir devoir);
+    void addDevoir(Devoir devoir, Integer classe_id);
 
     void editDevoir(Devoir devoir);
 

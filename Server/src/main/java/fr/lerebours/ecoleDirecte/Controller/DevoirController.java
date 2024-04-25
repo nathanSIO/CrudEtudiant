@@ -34,9 +34,9 @@ public class DevoirController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<?> addDevoir(@RequestBody Devoir Devoir) {
-        DevoirService.addDevoir(Devoir);
-
+    public ResponseEntity<?> addDevoir(@RequestBody Devoir Devoir, @RequestParam Integer classe_id) {
+        this.DevoirService.addDevoir(Devoir, classe_id);
+ 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 

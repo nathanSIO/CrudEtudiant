@@ -34,9 +34,12 @@ public class ClasseServiceImplement implements ClasseService {
     }
 
     public void addEtudiantToClasse(Integer classe_id, Etudiant etudiant_id) {
-        Classe classe = this.classeRepository.findById(classe_id).get();
-        classe.addEtudiant(etudiant_id);
-        this.classeRepository.save(classe);
+        if(classe_id != null){
+            Classe classe = this.classeRepository.findById(classe_id).get();
+            classe.addEtudiant(etudiant_id);
+            this.classeRepository.save(classe);
+        }
+        
     }
 
     public Iterable<EtudiantFullDTO> getAllEtudiantsFromClasses() {

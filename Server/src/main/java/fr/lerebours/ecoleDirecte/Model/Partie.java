@@ -23,10 +23,10 @@ public class Partie {
 
     private float bareme;
 
-    // private float note;
+    private float note;
 
 
-    @OneToOne
-    @JoinColumn(name = "id_note")
-    private Note note;
+    // @OneToOne
+    // @JoinColumn(name = "id_note")
+    // private Note note;
 }

@@ -42,4 +42,8 @@ public class Classe {
     public void addEtudiant(Etudiant etudiant) {
         this.etudiants.add(etudiant);
     }
+
+    public void addDevoir(Devoir devoir) {
+        this.devoirs.add(devoir);
+    }
 }
