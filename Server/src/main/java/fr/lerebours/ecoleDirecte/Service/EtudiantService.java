@@ -16,5 +16,5 @@ public interface EtudiantService {
 
     void deleteEtudiantByID(Integer etudiant_id);
 
-    // Iterable<Etudiant> getAllEtudiantsAvailable();
+    Iterable<Etudiant> getAllEtudiantsAvailable();
 }

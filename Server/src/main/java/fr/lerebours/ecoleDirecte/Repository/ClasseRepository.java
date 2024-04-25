@@ -10,6 +10,6 @@ import fr.lerebours.ecoleDirecte.Model.Classe;
 @Repository
 public interface ClasseRepository  extends CrudRepository<Classe, Integer> {
 
-    @Query("SELECT new fr.lerebours.ecoleDirecte.Model.DTO.EtudiantFullDTO(e.id, e.nom, e.prenom, e.photo_URL, c.id) FROM Classe c JOIN c.etudiants e")
+    @Query("SELECT new fr.lerebours.ecoleDirecte.Model.DTO.EtudiantFullDTO(e.id, e.nom, e.prenom, e.photo_URL, c.id, c.denomination) FROM Classe c JOIN c.etudiants e")
     Iterable<EtudiantFullDTO> findAllEtudiants();
 }

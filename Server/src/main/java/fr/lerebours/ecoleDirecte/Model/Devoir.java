@@ -34,11 +34,11 @@ public class Devoir {
     // @JoinColumn(name = "id_classe")
     // private Classe classe;
 
-    @OneToOne
-    @JoinColumn(name = "id_matiere")
-    private Matiere matiere;
+    // @OneToOne
+    // @JoinColumn(name = "id_matiere")
+    // private Matiere matiere;
 
     @OneToMany
-    @JoinColumn(name = "id_parties")
+    @JoinColumn(name = "id_devoir")
     private List<Partie> parties = new ArrayList<>();
 }

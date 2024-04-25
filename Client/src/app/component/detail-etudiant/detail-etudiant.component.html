@@ -44,7 +44,7 @@
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <mat-label for="classSelect">Classe</mat-label>
-          <mat-select name="classSelect" [ngModel]="etudiant.classeId?.id" (ngModelChange)="onClasseIdChange($event)" [ngModelOptions]="{standalone: true}">
+          <mat-select name="classSelect" [ngModel]="etudiant.id_classe" (ngModelChange)="onClasseIdChange($event)" [ngModelOptions]="{standalone: true}">
             <mat-option [value]=""></mat-option>
             @for (classe of classeList; track classe) {
             <mat-option [value]="classe.id">{{classe.denomination}}</mat-option>

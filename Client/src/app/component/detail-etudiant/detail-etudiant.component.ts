@@ -136,7 +136,7 @@ export class DetailEtudiantComponent implements OnInit {
    * Enregistrer l'étudiant.
    */
   public enregistrer(): void {
-    console.log(this.etudiant)
+    console.log( this.etudiant)
     this.etudiantService.enregistrerEtudiant(this.etudiant).subscribe({
       next: value => {
         this.router.navigateByUrl('etudiants');
@@ -145,16 +145,19 @@ export class DetailEtudiantComponent implements OnInit {
     });
   }
 
-onClasseIdChange(newId: number | null): void {
-    console.log("je rentre")
-    if (!this.etudiant.classeId) {
+onClasseIdChange(newEtudiant: number | null): void {
+
+    console.log("je rentre " + newEtudiant)
+    if (this.etudiant.id_classe) {
       console.log("je rentre null")
       // Si c'est le cas, initialisez-le à un nouvel objet
-      this.etudiant.classeId = { id: newId! };
+      this.etudiant.id_classe = newEtudiant!;
+      console.log("after " + this.etudiant)
   } else {
       console.log("je rentre j'ai une classe")
       // Sinon, mettez simplement à jour l'id
-      this.etudiant.classeId.id = newId!;
+      this.etudiant.id_classe  = newEtudiant!;
+      console.log("after " + this.etudiant)
   }
 }
 

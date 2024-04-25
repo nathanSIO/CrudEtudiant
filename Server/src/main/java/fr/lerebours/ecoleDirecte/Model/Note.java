@@ -1,32 +1,23 @@
 package fr.lerebours.ecoleDirecte.Model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(schema = "public", name = "parties")
+@Table(schema = "public", name = "note")
 @Getter
 @Setter
-public class Partie {
+public class Note {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String nom;
-
-    private float bareme;
-
-    // private float note;
-
-
-    @OneToOne
-    @JoinColumn(name = "id_note")
-    private Note note;
+    private float valeur;
 }

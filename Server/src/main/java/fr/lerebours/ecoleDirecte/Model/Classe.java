@@ -2,6 +2,9 @@ package fr.lerebours.ecoleDirecte.Model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -27,6 +30,7 @@ public class Classe {
     // @OneToMany(mappedBy = "classeId", fetch = FetchType.EAGER)
     // private Etudiant[] etudiants;
     
+   
     @OneToMany( fetch = FetchType.EAGER)
     @JoinColumn(name = "id_classe")
     private List<Etudiant> etudiants;

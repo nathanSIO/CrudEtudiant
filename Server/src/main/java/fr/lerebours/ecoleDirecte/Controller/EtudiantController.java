@@ -60,8 +60,8 @@ public class EtudiantController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    // @GetMapping("/allAvailable")
-    // public Iterable<Etudiant> getAllEtudiantsAvailable() {
-    //     return this.etudiantService.getAllEtudiantsAvailable();
-    // }
+    @GetMapping("/allAvailable")
+    public Iterable<Etudiant> getAllEtudiantsAvailable() {
+        return this.etudiantService.getAllEtudiantsAvailable();
+    }
 }

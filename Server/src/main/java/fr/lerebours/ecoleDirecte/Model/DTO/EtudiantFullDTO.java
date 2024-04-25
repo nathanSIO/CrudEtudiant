@@ -35,6 +35,15 @@ public class EtudiantFullDTO {
         this.id_classe = id_classe;
     }
 
+    public EtudiantFullDTO(Integer id, String nom, String prenom, String photo_URL,Integer id_classe, String denomination) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.photo_URL = photo_URL;
+        this.id_classe = id_classe;
+        this.denomination = denomination;
+    }
+
     private Integer id;
 
     private String nom;
@@ -44,4 +53,6 @@ public class EtudiantFullDTO {
     private String photo_URL;
 
     private Integer id_classe;
+
+    private String denomination;
 }

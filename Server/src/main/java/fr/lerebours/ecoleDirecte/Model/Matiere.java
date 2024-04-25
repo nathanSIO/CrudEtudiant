@@ -28,7 +28,7 @@ public class Matiere {
     @JoinColumn(name = "id_matiere")
     private List<Devoir> devoirs;
 
-    @OneToMany( fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_partie")
-    private List<Partie> parties;
+    // @OneToMany( fetch = FetchType.EAGER)
+    // @JoinColumn(name = "id_partie")
+    // private List<Partie> parties;
 }

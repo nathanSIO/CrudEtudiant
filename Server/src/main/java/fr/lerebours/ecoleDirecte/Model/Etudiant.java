@@ -1,10 +1,14 @@
 package fr.lerebours.ecoleDirecte.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import fr.lerebours.ecoleDirecte.Model.DTO.EtudiantFullDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -35,7 +39,12 @@ public class Etudiant {
 
     private String photo_URL;
 
-    // @ManyToOne( fetch = FetchType.EAGER)
+    @JsonIgnoreProperties({"etudiants"})
+    @ManyToOne
+    @JoinColumn(name = "id_classe")
+    private Classe classe;
+}
+
+// @ManyToOne( fetch = FetchType.EAGER)
     // @JoinColumn(name = "id_classe")
     // private Classe classeId; 
-}

@@ -7,5 +7,5 @@ import fr.lerebours.ecoleDirecte.Model.Etudiant;
 
 @Repository
 public interface EtudiantRepository extends CrudRepository<Etudiant, Integer> {
-    // Iterable<Etudiant> findAllByClasseIdIsNull();
+    Iterable<Etudiant> findAllByClasseIsNull();
 }
